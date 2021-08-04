@@ -1,7 +1,4 @@
-### USAGE:
-1. **Pytest**: pytest
-2. **Unittests**: py manage.py test
-3. With **coverage** stat: 1) coverage erase 2)coverage run -m pytest **OR** coverage run manage.py test 3) coverage report
+**Report is updated every day at midnight**
 
 ### INSTALLATION:
 1. git clone https://github.com/DenMaslov/quiz_logs_tests.git
