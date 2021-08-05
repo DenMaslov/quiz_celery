@@ -1,4 +1,4 @@
-**Report is updated every day at midnight**
+**Report is updated every day at 20.00**
 
 ### INSTALLATION:
 1. git clone https://github.com/DenMaslov/quiz_logs_tests.git
