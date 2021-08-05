@@ -141,7 +141,7 @@ from celery.schedules import crontab
 CELERY_BEAT_SCHEDULE = {
     'task-every-day': {
         'task': 'tests.tasks.update_csv_file',
-        'schedule': crontab(minute=0, hour=0),
+        'schedule': crontab(minute=0, hour=20),
     },
 }
 
