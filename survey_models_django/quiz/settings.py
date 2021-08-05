@@ -136,6 +136,14 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
+from celery.schedules import crontab
+
+CELERY_BEAT_SCHEDULE = {
+    'task-every-day': {
+        'task': 'tests.tasks.update_csv_file',
+        'schedule': crontab(minute='*/1'),
+    },
+}
 
 LOGGING_DIR = os.path.join(BASE_DIR, 'logs')
 if not os.path.exists(LOGGING_DIR):
