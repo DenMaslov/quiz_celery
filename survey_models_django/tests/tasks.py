@@ -29,8 +29,8 @@ def write_data_to_csv(filename, test_sessions, tests):
         completed = all_sessions - not_completed
         writer.writerow([str(completed),
                          str(not_completed),
-                         str((completed / all_sessions) * 100)[:4] + '%',
-                         str((not_completed / all_sessions) * 100)[:4] + '%'
+                         str(round((completed / all_sessions),4) * 100) + '%',
+                         str(round((not_completed / all_sessions), 4) * 100) + '%',
                         ])
 
         writer.writerow(title_row)
