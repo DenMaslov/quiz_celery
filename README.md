@@ -2,7 +2,7 @@
 
 ### INSTALLATION:
 1. git clone https://github.com/DenMaslov/quiz_logs_tests.git
-2. cd quiz_logs_tests
+2. cd quiz_celery
 3. pipenv shell
 4. pipenv install
 5. cd survey_models_django
