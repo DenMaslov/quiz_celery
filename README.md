@@ -8,6 +8,7 @@
 5. cd survey_models_django
 6. docker-compose build
 7. docker-compose up
+8.  docker-compose exec web python manage.py migrate
 
 
 ### TESTED WITH:
