@@ -6,6 +6,8 @@
 3. pipenv shell
 4. pipenv install
 5. cd survey_models_django
+6. docker-compose build
+7. docker-compose up
 
 
 ### TESTED WITH:
