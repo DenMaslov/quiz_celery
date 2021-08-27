@@ -1,4 +1,4 @@
-**Report is updated every day at 20.00**
+**Report is updated every minute for testing celery**
 
 ### INSTALLATION:
 1. git clone --branch celery-docker https://github.com/DenMaslov/quiz_celery.git
