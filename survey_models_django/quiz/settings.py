@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-qu6e7a-c$c+@#_#%mfcz6e7o+tijz7c)yl2l9ygd+fx(t8db*u'
+SECRET_KEY = os.getenv('SECRET_KEY', '123')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -129,9 +129,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #CELERY && REDIS
 REDIS_HOST = '127.0.0.1'
 REDIS_PORT = '6379'
-CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+CELERY_BROKER_URL = "redis://redis:6379"
+CELERY_RESULT_BACKEND = "redis://redis:6379"
+# CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
-CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+# CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
@@ -141,7 +143,7 @@ from celery.schedules import crontab
 CELERY_BEAT_SCHEDULE = {
     'task-every-day': {
         'task': 'tests.tasks.update_csv_file',
-        'schedule': crontab(minute=0, hour=20),
+        'schedule': crontab(minute='*/1'),
     },
 }
 
